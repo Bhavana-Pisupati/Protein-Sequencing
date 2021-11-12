@@ -80,7 +80,16 @@ Parameters: list of strs ; dict mapping strs to strs
 Returns: list of strs
 '''
 def generateProtein(codons, codonD):
-    return
+    protein=[]
+    for i in range(len(codons)):
+        codon=codons[i]
+        if i==0:
+            protein.append("Start")
+        else:
+            protein.append(codonD[codon])
+        if codonD[codon]=="Stop":
+            return protein
+    return protein
 
 
 '''
@@ -224,7 +233,8 @@ if __name__ == "__main__":
     # runWeek1()
     # test.testReadFile()
     # test.testDnaToRna()
-    test.testMakeCodonDictionary()
+    # test.testMakeCodonDictionary()
+    test.testGenerateProtein()
 
     ## Uncomment these for Week 2 ##
     """
