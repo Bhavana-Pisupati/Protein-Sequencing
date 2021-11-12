@@ -167,8 +167,12 @@ Parameters: list of strs
 Returns: dict mapping strs to ints
 '''
 def aminoAcidDictionary(aaList):
-    return
-
+    d={}
+    for i in aaList:
+        if i not in d:
+            d[i]=0
+        d[i]+=1
+    return d
 
 '''
 findAminoAcidDifferences(proteinList1, proteinList2, cutoff)
@@ -274,7 +278,8 @@ if __name__ == "__main__":
     runWeek2()
     """
     # test.testCommonProteins()
-    test.testCombineProteins()
+    # test.testCombineProteins()
+    test.testAminoAcidDictionary()
 
     ## Uncomment these for Week 3 ##
     """
